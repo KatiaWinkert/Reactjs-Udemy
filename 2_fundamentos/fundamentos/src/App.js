@@ -7,6 +7,7 @@ import Events from './components/Events'
 
 //styles css //
 import './App.css'
+import ChallEnge from './components/ChallEnge'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <h1>Fundamentos React</h1>
       <FristComponent />
+      <ChallEnge/>
       <TemplateExpressions />
       <MyComponent />
       <Events />
