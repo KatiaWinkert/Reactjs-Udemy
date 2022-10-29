@@ -1,9 +1,10 @@
 import './App.css'
 import City from './assets/city.jpg'
 
+
 //componentes//
 import ManageData from './components/ManageData'
-
+import ListeRender from './components/ListeRender'
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <img src={City} alt="Cidade" />
       </div>
       <ManageData/>
+      <ListeRender/>
     </div>
   )
 }
