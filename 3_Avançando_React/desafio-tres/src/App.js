@@ -8,8 +8,9 @@ import ConditonalRender from './components/ConditonalRender'
 import ShowUserName from './components/ShowUserName'
 import { useState } from 'react'
 import CarDetails from './components/CarDetails'
+import Fragment from './components/Fragment'
 function App() {
-  const name = 'Katia'
+  //const name = 'Katia'
   const [userName] = useState('Katia <3')
 
   const cars = [
@@ -48,6 +49,8 @@ function App() {
           newCar={car.newCar}
         />
       ))}
+      {/*Fragment*/}
+       <Fragment propFragment="teste"/>
     </div>
   )
 }
