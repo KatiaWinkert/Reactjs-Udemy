@@ -9,6 +9,8 @@ import ShowUserName from './components/ShowUserName'
 import { useState } from 'react'
 import CarDetails from './components/CarDetails'
 import Fragment from './components/Fragment'
+import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
 function App() {
   //const name = 'Katia'
   const [userName] = useState('Katia <3')
@@ -18,6 +20,10 @@ function App() {
     { id: 2, brand: 'Honda', color: 'Cinza', newCar: false, km: 20.0 },
     { id: 3, brand: 'Ferrari', color: 'Amarela', newCar: true, km: 0 },
   ]
+
+  function showMassenger() {
+    console.log('Evento do componente pai!')
+  }
 
   return (
     <div className="App">
@@ -43,6 +49,7 @@ function App() {
       {/* Loop em array de object*/}
       {cars.map((car) => (
         <CarDetails
+          key={car.id}
           brand={car.brand}
           color={car.color}
           km={car.km}
@@ -50,7 +57,13 @@ function App() {
         />
       ))}
       {/*Fragment*/}
-       <Fragment propFragment="teste"/>
+      <Fragment propFragment="teste" />
+      {/*Children*/}
+      <Container>
+        <p>E esse é o conteúdo</p>
+      </Container>
+      {/*executar função*/}
+      <ExecuteFunction myFunction={showMassenger} />
     </div>
   )
 }
