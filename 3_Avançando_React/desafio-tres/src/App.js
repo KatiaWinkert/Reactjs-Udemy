@@ -6,6 +6,7 @@ import City from './assets/city.jpg'
 import ManageData from './components/ManageData'
 import ListeRender from './components/ListeRender'
 import ConditonalRender from './components/ConditonalRender'
+import ShowUserName from './components/ShowUserName'
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
       <ManageData/>
       <ListeRender/>
       <ConditonalRender/>
+      <ShowUserName name="Katia"/>
     </div>
   )
 }
