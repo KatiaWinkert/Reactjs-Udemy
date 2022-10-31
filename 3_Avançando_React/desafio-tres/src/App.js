@@ -7,7 +7,13 @@ import ManageData from './components/ManageData'
 import ListeRender from './components/ListeRender'
 import ConditonalRender from './components/ConditonalRender'
 import ShowUserName from './components/ShowUserName'
+import { useState } from 'react'
+import CarDetails from './components/CarDetails'
 function App() {
+
+  const name = "Katia"
+  const [userName] = useState("Katia <3")
+
   return (
     <div className="App">
       <h1>Avançando React desafio 3</h1>
@@ -22,7 +28,11 @@ function App() {
       <ManageData/>
       <ListeRender/>
       <ConditonalRender/>
-      <ShowUserName name="Katia"/>
+      {/*Props*/}
+      <ShowUserName name={userName}/>
+      {/*Destructuring*/}
+      <CarDetails brand="VW" km={100000} color="Azul" />
+
     </div>
   )
 }
