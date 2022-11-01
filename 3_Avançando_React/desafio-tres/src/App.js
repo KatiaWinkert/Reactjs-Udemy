@@ -13,6 +13,7 @@ import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
 import Message from './components/Message'
 import ChangeMessageState from './components/ChangeMessageState'
+import UserDetails from './components/UserDetails'
 function App() {
   //const name = 'Katia'
   const [userName] = useState('Katia <3')
@@ -27,11 +28,18 @@ function App() {
     console.log('Evento do componente pai!')
   }
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('')
 
   const handleMessage = (msg) => {
-    setMessage(msg);
+    setMessage(msg)
   }
+
+  const users = [
+    { id: 1, name: 'Vitoria', job: 'Estagiario', age: 17 },
+    { id: 2, name: 'Nino', job: 'Contador', age: 48 },
+    { id: 3, name: 'Carlos', job: 'Reporter', age: 25 },
+    { id: 4, name: 'Fabiano', job: 'Programador', age: 21 },
+  ]
 
   return (
     <div className="App">
@@ -44,6 +52,7 @@ function App() {
       <div>
         <img src={City} alt="Cidade" />
       </div>
+      <UserDetails />
       <ManageData />
       <ListeRender />
       <ConditonalRender />
@@ -72,9 +81,18 @@ function App() {
       </Container>
       {/*executar função*/}
       <ExecuteFunction myFunction={showMassenger} />
-    {/*State lift*/}
-    <Message msg={message}/>
-    <ChangeMessageState handleMessage={handleMessage}/>
+      {/*State lift*/}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
+      {/*Desafio*/}
+      {users.map((user) => (
+        <UserDetails
+          key={user.id}
+          name={user.name}
+          job={user.job}
+          age={user.age}
+        />
+      ))}
     </div>
   )
 }
