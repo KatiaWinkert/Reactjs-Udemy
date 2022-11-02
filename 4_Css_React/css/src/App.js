@@ -4,6 +4,7 @@ import { useState } from 'react'
 function App() {
   const n = 15
   const [name] = useState('katia')
+  const redtitle = false
   return (
     <div className="App">
       {/*Css Global*/}
@@ -28,6 +29,10 @@ function App() {
         }
       >
         Tetse Nome
+      </h2>
+      {/*Classe Dinamica*/}
+      <h2 className={redtitle ? 'red-title' : 'title'}>
+        Este titulo vai ter classe dinamica
       </h2>
     </div>
   )
