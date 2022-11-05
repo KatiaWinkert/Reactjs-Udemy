@@ -2,10 +2,19 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+h1{
+  background-color: #282c34;
+  padding: 10px;
+  color: #fff;
+  border-top: #61dafb solid 3px;
+  border-radius: 45%;
+  border-left: #920707 solid 2px;
+  border-right: #920707 solid 2px;
+  border-width: medium;
+
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
