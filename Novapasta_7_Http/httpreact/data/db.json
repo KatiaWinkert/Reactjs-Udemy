@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": 3,
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "name": "MAtheus",
+      "price": "16",
+      "id": 4
+    },
+    {
+      "name": "MAtheus",
+      "price": "16",
+      "id": 5
+    },
+    {
+      "name": "Blusa",
+      "price": "25",
+      "id": 6
+    },
+    {
+      "name": "Bermuda",
+      "price": "30.50",
+      "id": 7
+    }
+  ]
+}
