@@ -39,6 +39,11 @@
       "name": "Celular Samsung",
       "price": "1.200",
       "id": 8
+    },
+    {
+      "name": "Celular Lg",
+      "price": "900",
+      "id": 9
     }
   ]
 }
