@@ -1,55 +1,61 @@
 import './App.css'
 import React, { useState, useEffect } from 'react'
 
+//4 Custom hook
+import { useFetch } from './hooks/useFetch'
+
 const url = 'http://localhost:3000/products'
 
 function App() {
   const [products, setProducts] = useState([])
+  //4 custom hook
+  const { data: itens } = useFetch(url)
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
   // 1- resgatando dados
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(url)
-      const data = await res.json()
+  //useEffect(() => {
+  //async function fetchData() {
+  //const res = await fetch(url)
+  //const data = await res.json()
 
-      setProducts(data)
-    }
-    fetchData()
-  }, [])
+  //setProducts(data)
+  //}
+  //fetchData()
+  //}, [])
 
   // 2 - add de produtos
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const product ={
-      name, 
-      price, 
+    const product = {
+      name,
+      price,
     }
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          "Content-Type": 'application/json'
-        },
-        body: JSON.stringify(product)
-       
-      })
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
 
-      // 3 carregamento dinamico de dados.
+    // 3 carregamento dinamico de dados.
 
-        const addedProduct = await res.json()
+    const addedProduct = await res.json()
 
-      setProducts((prevProducts) => [...prevProducts, addedProduct ])
-    
+    setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    setName('')
+    setPrice('') // esses dois comandos exclui limpa a lista
   }
 
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
       <ul>
-        {products.map((product) => (
+        {itens && itens.map((product) => (
           <li key={product.id}>
             {product.name} - R$: {product.price}
           </li>
