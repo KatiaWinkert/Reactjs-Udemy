@@ -34,6 +34,11 @@
       "name": "Bermuda",
       "price": "30.50",
       "id": 7
+    },
+    {
+      "name": "Celular Samsung",
+      "price": "1.200",
+      "id": 8
     }
   ]
 }
