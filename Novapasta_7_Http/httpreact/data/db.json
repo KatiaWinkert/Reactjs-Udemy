@@ -44,6 +44,11 @@
       "name": "Celular Lg",
       "price": "900",
       "id": 9
+    },
+    {
+      "name": "Borracha",
+      "price": "1.00",
+      "id": 10
     }
   ]
 }
