@@ -9,7 +9,7 @@ const url = 'http://localhost:3000/products'
 function App() {
   const [products, setProducts] = useState([])
   //4 custom hook
-  const { data: itens } = useFetch(url)
+  const { data: itens, httpConfig } = useFetch(url)
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
