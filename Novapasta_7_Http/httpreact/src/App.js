@@ -26,14 +26,14 @@ function App() {
   //}, [])
 
   // 2 - add de produtos
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault()
 
     const product = {
       name,
       price,
     }
-    const res = await fetch(url, {
+    /*const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +45,9 @@ function App() {
 
     const addedProduct = await res.json()
 
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
+    setProducts((prevProducts) => [...prevProducts, addedProduct])*/
+    //5 - refatorando post 
+    httpConfig(product, "POST")
 
     setName('')
     setPrice('') // esses dois comandos exclui limpa a lista
