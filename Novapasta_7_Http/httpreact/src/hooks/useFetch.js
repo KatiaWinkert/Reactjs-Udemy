@@ -10,6 +10,10 @@ export const useFetch = (url) => {
   const [method, setMethod] = useState(null) // essa linha diz qaul metodo estarei usando Get ou Post
   const [callFetch, setCallFetch] = useState(false) // esse codigo serve para entrar
 
+
+  // 6- loading 
+  const [loading, setLoading] = useState(false)
+
   const httpConfig = (data, method) => {
     if (method === 'POST') {
       setConfig({
@@ -25,11 +29,17 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     const fetchData = async () => {
+
+        //6 - loading 
+        setLoading(true)
+
       const res = await fetch(url)
 
       const json = await res.json()
 
       setData(json)
+
+      setLoading(false)
     }
     fetchData()
   }, [url, callFetch])
@@ -51,5 +61,5 @@ export const useFetch = (url) => {
     httpRequest()
   }, [config, method, url])
 
-  return { data, httpConfig }
+  return { data, httpConfig, loading }
 }
