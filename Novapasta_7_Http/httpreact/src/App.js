@@ -26,7 +26,7 @@ function App() {
   //}, [])
 
   // 2 - add de produtos
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     const product = {
@@ -46,8 +46,8 @@ function App() {
     const addedProduct = await res.json()
 
     setProducts((prevProducts) => [...prevProducts, addedProduct])*/
-    //5 - refatorando post 
-    httpConfig(product, "POST")
+    //5 - refatorando post
+    httpConfig(product, 'POST')
 
     setName('')
     setPrice('') // esses dois comandos exclui limpa a lista
@@ -59,11 +59,12 @@ function App() {
       {/* 6 loading */}
       {loading && <p>Carregando dados...</p>}
       <ul>
-        {itens && itens.map((product) => (
-          <li key={product.id}>
-            {product.name} - R$: {product.price}
-          </li>
-        ))}
+        {itens &&
+          itens.map((product) => (
+            <li key={product.id}>
+              {product.name} - R$: {product.price}
+            </li>
+          ))}
       </ul>
       <div className="add-product">
         <form onSubmit={handleSubmit}>
@@ -85,7 +86,9 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="Criar" />
+          {/* 7 - estado de loading de Post*/}
+          {loading && <input type="submit" disabled value="Aguarde!" />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
