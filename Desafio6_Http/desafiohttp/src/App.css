@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.add-product {
+  border-top: 1px solid #000;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
