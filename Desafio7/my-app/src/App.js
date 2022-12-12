@@ -15,10 +15,11 @@ function App() {
     <div className="App">
       <h1>React Router</h1>
       <BrowserRouter>
-      <Navbar/>
+        {/* 2 aula sobre links com react router */}
+        <Navbar />
         <Routes>
-          <Route path="/" element={< Home />} />
-          <Route path="/about" element={< About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>
