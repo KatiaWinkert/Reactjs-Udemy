@@ -12,23 +12,8 @@
     },
     {
       "id": 3,
-      "name": "Cola bastão",
-      "price": 5.5
-    },
-    {
-      "name": "Lapis ",
-      "price": "1.99",
-      "id": 4
-    },
-    {
       "name": "Borracha",
-      "price": "0.75",
-      "id": 5
-    },
-    {
-      "name": "Livro a Cabana",
-      "price": "19.90",
-      "id": 6
+      "price": 0.75
     }
   ]
 }
