@@ -1,16 +1,16 @@
 import './App.css'
 
-// 1 - config react route 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+// 1 - config react route
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// pages 
+// pages
 import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
+import Info from './pages/Info'
 
-//components 
+//components
 import Navbar from './Components/Navbar'
-
 
 function App() {
   return (
@@ -22,8 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* 6 - nested route */}
+          <Route path="/products/:id/info" element={<Info />} />
           {/*4 - rota dimanica */}
-          <Route path='/products/:id' element={<Product />} />
+          <Route path="/products/:id" element={<Product />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
