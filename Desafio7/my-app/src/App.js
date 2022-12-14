@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
 import Info from './pages/Info'
+import NotFound from './pages/NotFound'
 
 //components
 import Navbar from './Components/Navbar'
@@ -26,7 +27,8 @@ function App() {
           <Route path="/products/:id/info" element={<Info />} />
           {/*4 - rota dimanica */}
           <Route path="/products/:id" element={<Product />} />
-          
+          {/* 7 - no match route - erro 404 pag*/}
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </div>
