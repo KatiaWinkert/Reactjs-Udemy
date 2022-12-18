@@ -4,6 +4,8 @@ import { useCounterContext } from "../hooks/useCounterContex"
 const About = () => {
   //const { counter } = useContext(CounterContext)
 const {counter} = useCounterContext()
+
+
   return (
     <div>
       <h1>About</h1>
